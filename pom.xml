@@ -125,14 +125,14 @@
                     <changeLogFile>src/main/resources/liquibase/db-changelog-master.yaml</changeLogFile>
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                 </configuration>
-                <executions>
+                <!--<executions>
                     <execution>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>update</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions>-->
             </plugin>
 
         </plugins>
