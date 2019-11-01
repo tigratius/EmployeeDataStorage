@@ -3,7 +3,7 @@
 -- Insert data
 
 -- populate users
-INSERT INTO users VALUES (1, 'admin', '$2a$10$Bw3Lf8x3cyBw3a9WtKOI3uYCpevyqUOkfuzJty4sVEFGxnrDRTrDK', '+79232434818', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), "ACTIVE");
+INSERT INTO users (username, password, phone_number, created, updated, status) VALUES ('admin', '$2a$10$Bw3Lf8x3cyBw3a9WtKOI3uYCpevyqUOkfuzJty4sVEFGxnrDRTrDK', '+711111111', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), "ACTIVE");
 
 -- populate roles
 INSERT INTO roles VALUES (1, 'ROLE_USER', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), "ACTIVE");
