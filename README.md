@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/tigratius/EmployeeDataStorage.svg?branch=master)](https://travis-ci.org/tigratius/EmployeeDataStorage)
+[![codecov](https://codecov.io/gh/tigratius/EmployeeDataStorage/branch/master/graph/badge.svg)](https://codecov.io/gh/tigratius/EmployeeDataStorage)
 
 # EmployeeDataStorage
 Реализовать приложение (REST API), которое позволяет хранить данные о сотрудниках.

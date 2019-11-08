@@ -21,12 +21,12 @@ public class UserRegisterDto {
         return user;
     }
 
-    public static UserRegisterDto fromUser(User user) {
+    /*public static UserRegisterDto fromUser(User user) {
         UserRegisterDto userDto = new UserRegisterDto();
         userDto.setId(user.getId());
         userDto.setUsername(user.getUsername());
         userDto.setPhoneNumber(user.getPhoneNumber());
         userDto.setPassword(user.getPassword());
         return userDto;
-    }
+    }*/
 }

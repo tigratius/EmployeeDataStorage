@@ -64,7 +64,7 @@ public class EmployeeRestControllerV1 {
     @PutMapping("/{id}")
     public ResponseEntity<Employee> update(@PathVariable Long id, @RequestBody Employee employee) {
 
-        if (employee == null) {
+        if (id == null || employee == null) {
             return ResponseEntity.badRequest().build();
         }
 
@@ -76,6 +76,10 @@ public class EmployeeRestControllerV1 {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
 
+        if (id == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
         Employee employee = this.employeeService.getById(id);
 
         if (employee == null) {
@@ -86,6 +90,4 @@ public class EmployeeRestControllerV1 {
 
         return ResponseEntity.accepted().build();
     }
-
-
 }

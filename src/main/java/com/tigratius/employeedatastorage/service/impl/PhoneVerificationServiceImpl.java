@@ -17,31 +17,13 @@ public class PhoneVerificationServiceImpl implements PhoneVerificationService {
 
     private String sid;
 
-    /*@Value("${twilio.account.sid}")
-    private String ACCOUNT_SID;
-
-    @Value("${twilio.auth.token}")
-    private String AUTH_TOKEN;*/
-
-    public PhoneVerificationServiceImpl() {
-    }
+    /*public PhoneVerificationServiceImpl() {
+    }*/
 
     @PostConstruct
     protected void init()
     {
         Twilio.init(System.getenv("TWILIO_ACCOUNT_SID"), System.getenv("TWILIO_AUTH_TOKEN"));
-        /*Map<String, String> getenvMap = System.getenv();
-        for (Map.Entry<String, String> entry:
-        getenvMap.entrySet()) {
-
-            log.info("--------------");
-            log.info(entry.getKey());
-            log.info(entry.getValue());
-            log.info("--------------");
-        }*/
-
-
-//        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
     }
 
     public void sendCodeSms(String phoneNumber) {

@@ -63,7 +63,7 @@ public class UserRestControllerV1 {
     @PutMapping("/{id}")
     public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user) {
 
-        if (user == null) {
+        if (id == null || user == null) {
             return ResponseEntity.badRequest().build();
         }
 
@@ -74,6 +74,11 @@ public class UserRestControllerV1 {
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
+
+        if (id == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
         User user = this.userService.getById(id);
 
         if (user == null) {

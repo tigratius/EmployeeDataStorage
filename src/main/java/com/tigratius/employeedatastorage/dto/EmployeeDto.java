@@ -30,7 +30,7 @@ public class EmployeeDto {
 
     private List<DepartmentDto> departments;
 
-    public Employee toEmployee(){
+    /*public Employee toEmployee(){
         Employee employee = new Employee();
         employee.setId(id);
         employee.setFirstName(firstName);
@@ -39,22 +39,19 @@ public class EmployeeDto {
         employee.setBirthDate(birthDate);
         employee.setEmploymentDate(employmentDate);
 
-        /*List<DepartmentDto> departmentDtos = new ArrayList<>();
-
-        for (Department department: employee.getDepartments()
-        ) {
-            departmentDtos.add(DepartmentDto.fromDepartment(department));
-        }
-
-        employee.setDepartments(departmentDtos);*/
-
         return employee;
-    }
+    }*/
 
     public static EmployeeDto fromEmployee(Employee employee) {
 
         EmployeeDto employeeDto = new EmployeeDto();
 
+        employeeDto.setId(employee.getId());
+        employeeDto.setFirstName(employee.getFirstName());
+        employeeDto.setLastName(employee.getLastName());
+        employeeDto.setEmploymentDate(employee.getEmploymentDate());
+        employeeDto.setBirthDate(employee.getBirthDate());
+        employeeDto.setSalary(employee.getSalary());
 
         List<DepartmentDto> departmentDtoList = new ArrayList<>();
 

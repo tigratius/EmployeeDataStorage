@@ -11,13 +11,13 @@ public class RolesDto {
     private Long id;
     private String name;
 
-    public Role toRole()
+    /*public Role toRole()
     {
         Role role = new Role();
         role.setId(id);
         role.setName(name);
         return role;
-    }
+    }*/
 
     public static RolesDto fromRole(Role role) {
         RolesDto rolesDto = new RolesDto();

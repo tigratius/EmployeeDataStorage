@@ -6,8 +6,8 @@ import com.tigratius.employeedatastorage.dto.UserVerifyDto;
 import com.tigratius.employeedatastorage.exceptions.PhoneVerificationException;
 import com.tigratius.employeedatastorage.model.User;
 import com.tigratius.employeedatastorage.security.jwt.JwtTokenProvider;
+import com.tigratius.employeedatastorage.service.PhoneVerificationService;
 import com.tigratius.employeedatastorage.service.UserService;
-import com.tigratius.employeedatastorage.service.impl.PhoneVerificationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -29,10 +29,10 @@ public class AuthenticationRestControllerV1 {
     private final JwtTokenProvider jwtTokenProvider;
 
     private final UserService userService;
-    private final PhoneVerificationServiceImpl phoneVerificationService;
+    private final PhoneVerificationService phoneVerificationService;
 
     @Autowired
-    public AuthenticationRestControllerV1(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService, PhoneVerificationServiceImpl phoneVerificationService) {
+    public AuthenticationRestControllerV1(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService, PhoneVerificationService phoneVerificationService) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
         this.userService = userService;
@@ -40,7 +40,7 @@ public class AuthenticationRestControllerV1 {
     }
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody AuthenticationRequestDto requestDto) {
+    public ResponseEntity<Map<Object, Object>> login(@RequestBody AuthenticationRequestDto requestDto) {
         try {
             String username = requestDto.getUsername();
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, requestDto.getPassword()));
@@ -67,7 +67,7 @@ public class AuthenticationRestControllerV1 {
     }
 
     @PostMapping("/register")
-    public ResponseEntity registerUserAccount(@RequestBody UserRegisterDto userDto) {
+    public ResponseEntity<Map<Object, Object>> registerUserAccount(@RequestBody UserRegisterDto userDto) {
 
         User userExists = userService.findByUsername(userDto.getUsername());
 
@@ -89,7 +89,7 @@ public class AuthenticationRestControllerV1 {
     }
 
     @PostMapping("/verify")
-    public ResponseEntity verifyPhoneNumber(@RequestBody UserVerifyDto userVerifyDto) {
+    public ResponseEntity<Map<Object, Object>> verifyPhoneNumber(@RequestBody UserVerifyDto userVerifyDto) {
         try {
             String phoneNumber = userVerifyDto.getPhoneNumber();
             User user = userService.findByPhoneNumber(phoneNumber);
@@ -110,7 +110,7 @@ public class AuthenticationRestControllerV1 {
     }
 
     @PostMapping("/checkcode")
-    public ResponseEntity checkCode(@RequestBody UserVerifyDto userVerifyDto) {
+    public ResponseEntity<Map<Object, Object>> checkCode(@RequestBody UserVerifyDto userVerifyDto) {
         try{
             String phoneNumber = userVerifyDto.getPhoneNumber();
 

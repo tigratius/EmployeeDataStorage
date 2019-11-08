@@ -14,13 +14,13 @@ public class DepartmentDto {
     private Long id;
     private String name;
 
-    public Department toDepartment()
+    /*public Department toDepartment()
     {
         Department department = new Department();
         department.setId(id);
         department.setName(name);
         return department;
-    }
+    }*/
 
     public static DepartmentDto fromDepartment(Department department)
     {

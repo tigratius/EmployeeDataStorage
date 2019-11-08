@@ -64,7 +64,7 @@ public class DepartmentRestControllerV1{
     @PutMapping("/{id}")
     public ResponseEntity<Department> update(@PathVariable Long id, @RequestBody Department department) {
 
-        if (department == null) {
+        if (id == null || department == null) {
             return ResponseEntity.badRequest().build();
         }
 
@@ -75,6 +75,10 @@ public class DepartmentRestControllerV1{
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Department> delete(@PathVariable Long id) {
+
+        if (id == null) {
+            return ResponseEntity.badRequest().build();
+        }
 
         Department department = this.departmentService.getById(id);
 

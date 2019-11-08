@@ -17,13 +17,13 @@ public class UserDto {
     private String phoneNumber;
     private List<RolesDto> roles;
 
-    public User toUser(){
+    /*public User toUser(){
         User user = new User();
         user.setId(id);
         user.setUsername(username);
         user.setPhoneNumber(phoneNumber);
         return user;
-    }
+    }*/
 
     public static UserDto fromUser(User user) {
         UserDto userDto = new UserDto();

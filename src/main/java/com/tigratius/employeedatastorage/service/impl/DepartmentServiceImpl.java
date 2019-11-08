@@ -69,7 +69,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public List<Department> list() {
 
-//        return departmentRepository.findAll();
         return departmentRepository.findAllByOrderByIdAsc();
     }
 
