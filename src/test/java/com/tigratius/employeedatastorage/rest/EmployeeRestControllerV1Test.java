@@ -2,7 +2,6 @@ package com.tigratius.employeedatastorage.rest;
 
 import com.tigratius.employeedatastorage.builder.CommonBuilder;
 import com.tigratius.employeedatastorage.builder.EmployeeBuilder;
-import com.tigratius.employeedatastorage.dto.DepartmentDto;
 import com.tigratius.employeedatastorage.dto.EmployeeDto;
 import com.tigratius.employeedatastorage.model.Employee;
 import com.tigratius.employeedatastorage.service.EmployeeService;

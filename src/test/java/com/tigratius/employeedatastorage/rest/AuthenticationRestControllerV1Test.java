@@ -1,12 +1,10 @@
 package com.tigratius.employeedatastorage.rest;
 
-import com.tigratius.employeedatastorage.builder.CommonBuilder;
 import com.tigratius.employeedatastorage.builder.UserBuilder;
 import com.tigratius.employeedatastorage.dto.AuthenticationRequestDto;
 import com.tigratius.employeedatastorage.dto.UserRegisterDto;
 import com.tigratius.employeedatastorage.dto.UserVerifyDto;
 import com.tigratius.employeedatastorage.exceptions.PhoneVerificationException;
-import com.tigratius.employeedatastorage.model.Department;
 import com.tigratius.employeedatastorage.model.User;
 import com.tigratius.employeedatastorage.security.jwt.JwtTokenProvider;
 import com.tigratius.employeedatastorage.service.PhoneVerificationService;
@@ -20,9 +18,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.Authentication;
 
 import java.util.Map;
+import java.util.Objects;
 
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -60,7 +58,7 @@ public class AuthenticationRestControllerV1Test {
         ResponseEntity<Map<Object, Object>> response = authenticationRestController.login(userDto);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(user.getUsername(), response.getBody().get("username"));
+        assertEquals(user.getUsername(), Objects.requireNonNull(response.getBody()).get("username"));
         assertEquals(tokenNumber, response.getBody().get("token"));
 
         verify(authenticationManager, times(1)).authenticate(any());
@@ -79,7 +77,7 @@ public class AuthenticationRestControllerV1Test {
 
         ResponseEntity<Map<Object, Object>> response = authenticationRestController.login(userDto);
 
-        String message = (String) response.getBody().get("message");
+        String message = (String) Objects.requireNonNull(response.getBody()).get("message");
         assertTrue(message.contains("User with username"));
     }
 
@@ -100,7 +98,7 @@ public class AuthenticationRestControllerV1Test {
         ResponseEntity<Map<Object, Object>> response = authenticationRestController.registerUserAccount(userRegisterDto);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("User registered successfully", response.getBody().get("message"));
+        assertEquals("User registered successfully", Objects.requireNonNull(response.getBody()).get("message"));
     }
 
     @Test(expected = BadCredentialsException.class)

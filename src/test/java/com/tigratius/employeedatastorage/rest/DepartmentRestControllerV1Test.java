@@ -37,7 +37,7 @@ public class DepartmentRestControllerV1Test {
         ResponseEntity<DepartmentDto> response = departmentRestController.get(department.getId());
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(department.getName(), response.getBody().getName());
+        assertEquals(department.getName(), Objects.requireNonNull(response.getBody()).getName());
         assertEquals(department.getId(), response.getBody().getId());
     }
 

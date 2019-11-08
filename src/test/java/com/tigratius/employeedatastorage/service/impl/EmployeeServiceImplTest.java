@@ -2,7 +2,6 @@ package com.tigratius.employeedatastorage.service.impl;
 
 import com.tigratius.employeedatastorage.builder.CommonBuilder;
 import com.tigratius.employeedatastorage.builder.DepartmentBuilder;
-import com.tigratius.employeedatastorage.builder.EmployeeBuilder;
 import com.tigratius.employeedatastorage.model.Department;
 import com.tigratius.employeedatastorage.model.Employee;
 import com.tigratius.employeedatastorage.model.Status;
@@ -10,25 +9,17 @@ import com.tigratius.employeedatastorage.repository.DepartmentRepository;
 import com.tigratius.employeedatastorage.repository.EmployeeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import static com.tigratius.employeedatastorage.builder.CommonBuilder.*;
 import static com.tigratius.employeedatastorage.builder.EmployeeBuilder.*;
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 

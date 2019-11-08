@@ -1,6 +1,5 @@
 package com.tigratius.employeedatastorage.service.impl;
 
-import com.tigratius.employeedatastorage.builder.CommonBuilder;
 import com.tigratius.employeedatastorage.model.Department;
 import com.tigratius.employeedatastorage.model.Status;
 import com.tigratius.employeedatastorage.repository.DepartmentRepository;

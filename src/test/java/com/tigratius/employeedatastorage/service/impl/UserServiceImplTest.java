@@ -2,7 +2,6 @@ package com.tigratius.employeedatastorage.service.impl;
 
 import com.tigratius.employeedatastorage.builder.CommonBuilder;
 import com.tigratius.employeedatastorage.builder.UserBuilder;
-import com.tigratius.employeedatastorage.model.Department;
 import com.tigratius.employeedatastorage.model.Role;
 import com.tigratius.employeedatastorage.model.Status;
 import com.tigratius.employeedatastorage.model.User;
@@ -16,14 +15,11 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.jws.soap.SOAPBinding;
-
 import java.util.Date;
 import java.util.List;
 
 import static com.tigratius.employeedatastorage.builder.CommonBuilder.id;
 import static com.tigratius.employeedatastorage.builder.RoleBuilder.roleDb;
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
