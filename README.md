@@ -1,8 +1,14 @@
-[![Build Status](https://travis-ci.org/tigratius/EmployeeDataStorage.svg?branch=master)](https://travis-ci.org/tigratius/EmployeeDataStorage)
-[![codecov](https://codecov.io/gh/tigratius/EmployeeDataStorage/branch/master/graph/badge.svg)](https://codecov.io/gh/tigratius/EmployeeDataStorage)
-
 # EmployeeDataStorage
-Реализовать приложение (REST API), которое позволяет хранить данные о сотрудниках.
+##Technologies Information
+
+| Technology     | Badge |
+|:--------------:|:-----:|
+| Travis CI      | [![Build Status](https://travis-ci.org/tigratius/EmployeeDataStorage.svg?branch=master)](https://travis-ci.org/tigratius/EmployeeDataStorage) |
+| Codecov        | [![codecov](https://codecov.io/gh/tigratius/EmployeeDataStorage/branch/master/graph/badge.svg)](https://codecov.io/gh/tigratius/EmployeeDataStorage) |
+
+## Project Information
+
+Приложение (REST API), которое позволяет хранить данные о сотрудниках.
 
 Сотрудник должен содержать данные о департаменте, имя, фамилия, ЗП, дата рождения, дата приёма на работу.
 Необходимо реализовать разграничение доступа:
