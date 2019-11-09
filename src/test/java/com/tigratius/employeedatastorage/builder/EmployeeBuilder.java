@@ -28,8 +28,8 @@ public class EmployeeBuilder {
                         DepartmentBuilder.departmentDb("d1").build(),
                         DepartmentBuilder.departmentDb("d2").id(CommonBuilder.id("2")).build()))
                 .status(Status.ACTIVE)
-                .createdDate(new Date())
-                .updatedDate(new Date());
+                .createdDate(CommonBuilder.datetime("2019-11-01 00:00:00"))
+                .updatedDate(CommonBuilder.datetime("2019-11-01 00:00:00"));
     }
 
     public static EmployeeBuilder employeeWithDepartments(String firstName, String lastName) {

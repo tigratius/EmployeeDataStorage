@@ -13,8 +13,8 @@ public class RoleBuilder {
         return  role(name)
                 .id(CommonBuilder.id("1"))
                 .status(Status.ACTIVE)
-                .createdDate(new Date())
-                .updatedDate(new Date());
+                .createdDate(CommonBuilder.datetime("2019-11-01 00:00:00"))
+                .updatedDate(CommonBuilder.datetime("2019-11-01 00:00:00"));
     }
 
     public static RoleBuilder role(String name) {

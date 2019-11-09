@@ -11,7 +11,8 @@ import java.util.List;
 @Slf4j
 public class CommonBuilder {
 
-    private static final String pattern = "yyyy-MM-dd";
+    private static final String patternDate = "yyyy-MM-dd";
+    private static final String patternDateTime = "yyyy-MM-dd HH:mm:ss";
 
     public static BigDecimal number(String number) {
         return new BigDecimal(number);
@@ -27,7 +28,16 @@ public class CommonBuilder {
 
     public static Date date(String date) {
         try {
-            return new SimpleDateFormat(pattern).parse(date);
+            return new SimpleDateFormat(patternDate).parse(date);
+        } catch (Exception ex) {
+            log.error(ex.getMessage());
+        }
+        return null;
+    }
+
+    public static Date datetime(String date) {
+        try {
+            return new SimpleDateFormat(patternDateTime).parse(date);
         } catch (Exception ex) {
             log.error(ex.getMessage());
         }

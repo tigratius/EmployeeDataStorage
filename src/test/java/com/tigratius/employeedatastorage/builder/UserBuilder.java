@@ -22,8 +22,8 @@ public class UserBuilder {
                 .roles(CommonBuilder.list(
                         RoleBuilder.roleDb("ROLE_USER").build()))
                 .status(Status.NOT_ACTIVE)
-                .createdDate(new Date())
-                .updatedDate(new Date());
+                .createdDate(CommonBuilder.datetime("2019-11-01 00:00:00"))
+                .updatedDate(CommonBuilder.datetime("2019-11-01 00:00:00"));
     }
 
     public static UserBuilder userRoles(String username) {
