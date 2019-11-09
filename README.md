@@ -1,5 +1,5 @@
 # EmployeeDataStorage
-##Technologies Information
+## Technologies Information
 
 | Technology     | Badge |
 |:--------------:|:-----:|
