@@ -11,7 +11,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <mysql.version>8.0.15</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <jsonwebtoken.version>0.8.0</jsonwebtoken.version>
     </properties>
 
